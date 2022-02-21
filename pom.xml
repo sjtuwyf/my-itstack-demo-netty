@@ -7,6 +7,12 @@
     <groupId>org.itstack.demo</groupId>
     <artifactId>my-itstack-demo-netty</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>itstack-demo-netty-1-01</module>
+        <module>itstack-demo-netty-1-02</module>
+        <module>itstack-demo-netty-1-03</module>
+        <module>itstack-demo-netty-1-04</module>
+    </modules>
 
     <packaging>pom</packaging>
 
