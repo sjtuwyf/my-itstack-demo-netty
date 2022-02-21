@@ -12,6 +12,7 @@
         <module>itstack-demo-netty-1-02</module>
         <module>itstack-demo-netty-1-03</module>
         <module>itstack-demo-netty-1-04</module>
+        <module>itstack-demo-netty-1-05</module>
     </modules>
 
     <packaging>pom</packaging>
