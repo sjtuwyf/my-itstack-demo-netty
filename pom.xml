@@ -20,6 +20,7 @@
         <module>itstack-demo-netty-1-10</module>
         <module>itstack-demo-netty-1-11</module>
         <module>itstack-demo-netty-1-12</module>
+        <module>itstack-demo-netty-2-01</module>
     </modules>
 
     <packaging>pom</packaging>
