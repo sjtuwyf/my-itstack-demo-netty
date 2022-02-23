@@ -1,5 +1,6 @@
 package org.itstack.demo.netty.web;
 
+import io.netty.channel.ChannelFuture;
 import org.itstack.demo.netty.server.NettyServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,6 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+
+import java.net.InetSocketAddress;
 
 /**
  * @author ssqswyf
@@ -29,6 +32,9 @@ public class NettyApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
+        InetSocketAddress address = new InetSocketAddress(host, port);
+        ChannelFuture channelFuture = nettyServer.bing(address);
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> nettyServer.destroy()));
+        channelFuture.channel().closeFuture().syncUninterruptibly();
     }
 }
