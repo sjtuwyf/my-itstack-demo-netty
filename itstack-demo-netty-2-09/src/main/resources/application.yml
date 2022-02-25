@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+  redis:
+    host: 110.42.139.20
+    port: 6379
+    password: tencentRedis
