@@ -7,7 +7,6 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import org.itstack.demo.ark.server.socket.MyChannelInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,7 +41,7 @@ public class WsNettyServer implements Callable<Channel> {
             b.group(parentGroup, childGroup)
                     .channel(NioServerSocketChannel.class)
                     .option(ChannelOption.SO_BACKLOG,128)
-                    .childHandler(new MyChannelInitializer());
+                    .childHandler(new MyWsChannelInitializer());
 
             channelFuture = b.bind(address).syncUninterruptibly();
             this.channel = channelFuture.channel();
